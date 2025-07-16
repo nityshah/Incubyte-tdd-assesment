@@ -20,5 +20,9 @@ describe('SweetShop', () => {
         }).toThrow('ID, Name, and Category are required');
     });
 
+    test('adds a sweet', () => {
+        shop.addSweet('1001', 'Kaju Katli', 'Nut-Based', 50, 20);
+        expect(shop.sweets['1001'].name).toBe('Kaju Katli');
+    });
 
 });

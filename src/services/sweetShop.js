@@ -10,6 +10,8 @@ class sweetshop {
         if (!id || !name || !category) {
             throw new Error("ID, Name, and Category are required");
         }
+
+        
     }
 }
 module.exports = sweetshop;
