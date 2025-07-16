@@ -7,6 +7,8 @@ describe('SweetShop', () => {
         shop = new sweetshop();
     });
 
+
+    
     // add sweets logic
     test('throws error if required fields are missing or empty', () => {
         expect(() => {
@@ -35,6 +37,8 @@ describe('SweetShop', () => {
 
 
 
+
+
     //delete sweets logic
     test('deletes a sweet', () => {
         shop.addSweet('1001', 'Kaju Katli', 'Nut-Based', 50, 20);
@@ -46,12 +50,16 @@ describe('SweetShop', () => {
     });
 
 
+
+
     //purchase sweets logic
     test('purchase sweet reduces quantity', () => {
         shop.addSweet('1001', 'Kaju Katli', 'Nut-Based', 50, 20);
         shop.purchaseSweet('1001', 5);
         expect(shop.sweets['1001'].quantity).toBe(15);
     });
+
+
 
 
     // view sweets logic
@@ -106,6 +114,19 @@ describe('SweetShop', () => {
         const names = results.map(s => s.name);
         expect(names).toContain('Kaju Katli');
         expect(names).toContain('Barfi');
+    });
+
+
+
+
+    test('sort sweets by price ascending', () => {
+        shop.addSweet('1001', 'Kaju Katli', 'Nut-Based', 50, 20);
+        shop.addSweet('1002', 'Rasgulla', 'Syrup-Based', 30, 15);
+        shop.addSweet('1003', 'Barfi', 'Nut-Based', 40, 10);
+        const sweets = shop.viewSweets().sort((a, b) => a.price - b.price);
+        expect(sweets[0].name).toBe('Rasgulla');
+        expect(sweets[1].name).toBe('Barfi');
+        expect(sweets[2].name).toBe('Kaju Katli');
     });
 
 
