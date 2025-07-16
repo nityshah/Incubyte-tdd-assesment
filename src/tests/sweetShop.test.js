@@ -6,6 +6,8 @@ describe('SweetShop', () => {
     beforeEach(() => {
         shop = new SweetShop();
     });
+
+    // add sweets logic
     test('throws error if required fields are missing or empty', () => {
         expect(() => {
             shop.addSweet('', 'Kaju Katli', 'Nut-Based', 50, 20);
@@ -28,6 +30,16 @@ describe('SweetShop', () => {
     test('throws error on duplicate sweet ID', () => {
         shop.addSweet('1001', 'Kaju Katli', 'Nut-Based', 50, 20);
         expect(() => shop.addSweet('1001', 'Other Sweet', 'Candy', 20, 10)).toThrow();
+    });
+
+
+
+
+    //delete sweets logic
+    test('deletes a sweet', () => {
+        shop.addSweet('1001', 'Kaju Katli', 'Nut-Based', 50, 20);
+        shop.deleteSweet('1001');
+        expect(shop.sweets['1001']).toBeUndefined();
     });
 
 });
