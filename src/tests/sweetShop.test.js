@@ -97,5 +97,16 @@ describe('SweetShop', () => {
         expect(names).toContain('Kaju Katli');
         expect(names).toContain('Barfi');
     });
+    test('search sweets by price range', () => {
+        shop.addSweet('1001', 'Kaju Katli', 'Nut-Based', 50, 20);
+        shop.addSweet('1002', 'Rasgulla', 'Syrup-Based', 30, 15);
+        shop.addSweet('1003', 'Barfi', 'Nut-Based', 40, 10);
+        const results = shop.searchSweets({ minPrice: 35, maxPrice: 50 });
+        expect(results.length).toBe(2);
+        const names = results.map(s => s.name);
+        expect(names).toContain('Kaju Katli');
+        expect(names).toContain('Barfi');
+    });
+
 
 });
