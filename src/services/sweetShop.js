@@ -11,7 +11,7 @@ class sweetshop {
             throw new Error("ID, Name, and Category are required");
         }
 
-        
+        this.sweets[id] = new sweet(id,name,category,price,quantity);
     }
 }
 module.exports = sweetshop;
