@@ -45,6 +45,7 @@ class SweetShop {
     //restock sweets logic
     restockSweet(id, quantity) {
         const sweet = this.sweets[id];
+        if (!sweet) throw new Error("Sweet not found");
         sweet.quantity += quantity;
     }
 
