@@ -73,4 +73,18 @@ describe('SweetShop', () => {
         expect(() => shop.restockSweet('9999', 10)).toThrow('Sweet not found');
     });
 
+
+
+
+    //search sweets logic
+    test('search sweets by name', () => {
+        shop.addSweet('1001', 'Kaju Katli', 'Nut-Based', 50, 20);
+        shop.addSweet('1002', 'Rasgulla', 'Syrup-Based', 30, 15);
+        shop.addSweet('1003', 'Barfi', 'Nut-Based', 40, 10);
+
+        const results = shop.searchSweets({ name: 'kaju' });
+        expect(results.length).toBe(1);
+        expect(results[0].name).toBe('Kaju Katli');
+    });
+
 });
