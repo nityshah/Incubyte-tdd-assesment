@@ -7,7 +7,9 @@ class sweetshop {
     }
 
     addSweet(id, name, category, price, quantity) {
-        
+        if (!id || !name || !category) {
+            throw new Error("ID, Name, and Category are required");
+        }
     }
 }
 module.exports = sweetshop;
