@@ -23,5 +23,18 @@ class sweetshop {
         if (!this.sweets[id]) throw new Error(`Sweet with ID ${id} not found`);
         delete this.sweets[id];
     }
+
+
+
+
+    //purchase sweets logic
+    purchaseSweet(id, quantity) {
+        const sweet = this.sweets[id];
+        if (!sweet) throw new Error("Sweet not found");
+        if (sweet.quantity < quantity || quantity < 0) throw new Error("Insufficient stock");
+        sweet.quantity -= quantity;
+    }
+
+
 }
 module.exports = sweetshop;
