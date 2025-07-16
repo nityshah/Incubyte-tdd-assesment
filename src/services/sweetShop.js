@@ -55,7 +55,8 @@ class SweetShop {
     searchSweets({ name, category, minPrice, maxPrice }) {
         return Object.values(this.sweets).filter(s => {
             return (
-                (!name || s.name.toLowerCase().includes(name.toLowerCase()))
+                (!name || s.name.toLowerCase().includes(name.toLowerCase())) &&
+                (!category || s.category.toLowerCase() === category.toLowerCase())
             );
         });
     }
