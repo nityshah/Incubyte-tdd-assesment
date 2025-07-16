@@ -124,21 +124,3 @@ Incubyte-tdd-assesment/
 └── README.md
 
 
-## ✅ Features Implemented
-
-| Step | Feature Description                                                   |
-|------|------------------------------------------------------------------------|
-| 1    | Add a sweet with ID, name, category, price, and quantity              |
-| 2    | Validate required fields (ID, name, category)                         |
-| 3    | Prevent duplicate sweet IDs                                           |
-| 4    | Delete a sweet by ID                                                  |
-| 5    | Throw error if sweet to delete doesn't exist                          |
-| 6    | Purchase a sweet (reduce quantity)                                    |
-| 7    | Throw error if quantity to purchase exceeds available stock           |
-| 8    | View all sweets                                                       |
-| 9    | Restock a sweet (increase quantity)                                   |
-| 10   | Throw error if sweet to restock doesn't exist                         |
-| 11   | Search sweets by name (case-insensitive)                              |
-| 12   | Search sweets by category                                             |
-| 13   | Search sweets by price range (minPrice, maxPrice)                     |
-| 14   | Sort sweets by price in ascending order                               |
