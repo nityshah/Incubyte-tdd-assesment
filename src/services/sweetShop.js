@@ -10,9 +10,11 @@ class sweetshop {
         if (!id || !name || !category) {
             throw new Error("ID, Name, and Category are required");
         }
-        
+        if (this.sweets[id]) {
+            throw new Error("Sweet already exists");
+        }
 
-        this.sweets[id] = new sweet(id,name,category,price,quantity);
+        this.sweets[id] = new sweet(id, name, category, price, quantity);
     }
 }
 module.exports = sweetshop;
