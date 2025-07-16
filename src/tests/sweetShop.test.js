@@ -41,5 +41,8 @@ describe('SweetShop', () => {
         shop.deleteSweet('1001');
         expect(shop.sweets['1001']).toBeUndefined();
     });
+    test('throws error when deleting non-existent sweet', () => {
+        expect(() => shop.deleteSweet('9999')).toThrow('Sweet with ID 9999 not found');
+    });
 
 });
