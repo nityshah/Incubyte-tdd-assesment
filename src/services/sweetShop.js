@@ -1,7 +1,7 @@
 const sweet = require('../models/sweet');
 
 
-class sweetshop {
+class SweetShop  {
     constructor() {
         this.sweets = {}
     }
@@ -35,6 +35,7 @@ class sweetshop {
         sweet.quantity -= quantity;
     }
 
+    
 
 }
-module.exports = sweetshop;
+module.exports = SweetShop ;

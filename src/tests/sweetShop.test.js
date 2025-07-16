@@ -1,10 +1,10 @@
-const SweetShop = require('../services/sweetShop');
+const sweetshop = require('../services/sweetShop');
 
 describe('SweetShop', () => {
     let shop;
 
     beforeEach(() => {
-        shop = new SweetShop();
+        shop = new sweetshop();
     });
 
     // add sweets logic
@@ -51,6 +51,13 @@ describe('SweetShop', () => {
         shop.addSweet('1001', 'Kaju Katli', 'Nut-Based', 50, 20);
         shop.purchaseSweet('1001', 5);
         expect(shop.sweets['1001'].quantity).toBe(15);
+    });
+
+
+    test('viewSweets returns empty array when no sweets exist', () => {
+        const result = shop.viewSweets();
+        expect(result).toEqual([]);
+        expect(Array.isArray(result)).toBe(true);
     });
 
 });
