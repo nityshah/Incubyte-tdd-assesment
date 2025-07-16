@@ -1,5 +1,5 @@
 
-# Project Title
+# Sweet Shop Management System
 
 🍭 Sweet Shop Management System - TDD Kata (JavaScript)
 A clean and well-tested JavaScript implementation of the Sweet Shop Management System Kata, built using the principles of Test-Driven Development (TDD).
