@@ -54,10 +54,20 @@ describe('SweetShop', () => {
     });
 
 
+    // view sweets logic
     test('viewSweets returns empty array when no sweets exist', () => {
         const result = shop.viewSweets();
         expect(result).toEqual([]);
         expect(Array.isArray(result)).toBe(true);
+    });
+
+
+
+    // restock sweets logic
+    test('restocks sweet increases quantity', () => {
+        shop.addSweet('1001', 'Kaju Katli', 'Nut-Based', 50, 20);
+        shop.restockSweet('1001', 10);
+        expect(shop.sweets['1001'].quantity).toBe(30);
     });
 
 });
