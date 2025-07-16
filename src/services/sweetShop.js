@@ -6,6 +6,7 @@ class sweetshop {
         this.sweets = {}
     }
 
+    // add sweets logic
     addSweet(id, name, category, price, quantity) {
         if (!id || !name || !category) {
             throw new Error("ID, Name, and Category are required");
@@ -15,6 +16,11 @@ class sweetshop {
         }
 
         this.sweets[id] = new sweet(id, name, category, price, quantity);
+    }
+
+    //delete sweets logic
+    deleteSweet(id) {
+        delete this.sweets[id];
     }
 }
 module.exports = sweetshop;
