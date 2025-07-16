@@ -51,7 +51,14 @@ class SweetShop {
 
 
 
-    
+    //search sweets logic
+    searchSweets({ name, category, minPrice, maxPrice }) {
+        return Object.values(this.sweets).filter(s => {
+            return (
+                (!name || s.name.toLowerCase().includes(name.toLowerCase()))
+            );
+        });
+    }
 
 
 
