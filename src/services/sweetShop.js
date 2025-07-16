@@ -20,6 +20,7 @@ class sweetshop {
 
     //delete sweets logic
     deleteSweet(id) {
+        if (!this.sweets[id]) throw new Error(`Sweet with ID ${id} not found`);
         delete this.sweets[id];
     }
 }
