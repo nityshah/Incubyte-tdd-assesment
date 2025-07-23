@@ -8,7 +8,7 @@ describe('SweetShop', () => {
     });
 
 
-    
+
     // add sweets logic
     test('throws error if required fields are missing or empty', () => {
         expect(() => {
@@ -57,6 +57,12 @@ describe('SweetShop', () => {
         shop.addSweet('1001', 'Kaju Katli', 'Nut-Based', 50, 20);
         shop.purchaseSweet('1001', 5);
         expect(shop.sweets['1001'].quantity).toBe(15);
+    });
+    test('applies 10% discount with valid coupon code', () => {
+        shop.addSweet('1001', 'Kaju Katli', 'Nut-Based', 50, 20);
+        const price = shop.purchaseSweet('1001', 2, '10%discount'); 
+        expect(price).toBe(90);
+        expect(shop.sweets['1001'].quantity).toBe(18);
     });
 
 
