@@ -28,11 +28,22 @@ class SweetShop {
 
 
     //purchase sweets logic
-    purchaseSweet(id, quantity) {
+    purchaseSweet(id, quantity, coupen) {
         const sweet = this.sweets[id];
         if (!sweet) throw new Error("Sweet not found");
         if (sweet.quantity < quantity || quantity < 0) throw new Error("Insufficient stock");
+
+
+        const totalPrice = sweet.price * quantity;
+        let finalPrice = totalPrice;
+
+        if (coupen === "10%discount") {
+            finalPrice = totalPrice * 0.9; 
+        }
+
+
         sweet.quantity -= quantity;
+        return finalPrice;
     }
 
 
